@@ -129,7 +129,7 @@ const EthBusApp: React.FC = () => {
 
     try {
       const destinationChainSelector = "16015286601757825753"; 
-      const receiver = '0xF0F21D6AAc534345E16C2DeE12c3998A4e32e789'; // Receiver address
+      const receiver = '0x15B89822220A2bb9b1F248fAB176E7952d1Be071'; // Receiver address
       const token = tokenAddress;
       const getEstimatedFees = await contract.read.getEstimatedFees([destinationChainSelector, receiver, token,  
         passengerData]);
@@ -146,12 +146,17 @@ const EthBusApp: React.FC = () => {
 
   const executeBus = async () => {
     try {
+      const destinationChainSelector = "16015286601757825753"; 
+      const receiver = '0x15B89822220A2bb9b1F248fAB176E7952d1Be071'; // Receiver address
+      const token = tokenAddress;
+    
+
       const txExecuteBus = await writeContractAsync({
         address: contractAddress as Address,
         account: address,
         abi: EthBusABI,
         functionName: "sendMessagePayNative",
-        args: [123, '0xReceiverAddress', '0xTokenAddress'],
+        args: [destinationChainSelector,receiver , token]
       });
       
       console.log('Bus executed successfully:', txExecuteBus);
