@@ -26,6 +26,8 @@ ETH Bus is a platform designed to efficiently bridge tokens from Layer 2 to Laye
 
 We are proud to utilize CCIP for bridging tokens, providing our users with an efficient and cost-effective solution for cross-chain transactions.
 
+![ETH Bus Flow](https://github.com/0xale/EthBus/blob/main/public/miro.png) 
+
 ## Getting Started
 
 To get started with ETH Bus, follow these steps:
