@@ -168,7 +168,7 @@ const EthBusApp: React.FC = () => {
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-extrabold text-center mb-6">Tickets to take USDC to Ethereum</h1>
-
+  
       <div className="mb-6 flex justify-center">
         <button 
           className="btn btn-secondary p-2 bg-blue-600 text-white rounded-md shadow-md hover:bg-blue-700"
@@ -183,7 +183,7 @@ const EthBusApp: React.FC = () => {
           <p className="text-lg font-bold">Estimated Ticket Price: {formatUnits(estimatedFees, 18)} ETH</p>
         </div>
       )}
-
+  
       <div className="mb-4 flex flex-col items-center">
         <input
           type="text"
@@ -200,7 +200,7 @@ const EthBusApp: React.FC = () => {
           Join the Bus
         </button>
       </div>
-
+  
       <div className="mb-4">
         <h2 className="text-xl font-bold mb-2 text-center">Passengers in Bus</h2>
         <div className="grid grid-cols-2 gap-4">
@@ -216,6 +216,9 @@ const EthBusApp: React.FC = () => {
                 <>
                   <p>{busData.addresses[index]}</p>
                   <p>{busData.amounts[index]} USDC</p>
+                  {busData.addresses[index].toLowerCase() === address?.toLowerCase() && (
+                    <p className="text-xs text-gray-500 mt-1">you are here</p>
+                  )}
                 </>
               ) : (
                 <p>Empty</p>
@@ -224,7 +227,7 @@ const EthBusApp: React.FC = () => {
           ))}
         </div>
       </div>
-
+  
       {busData.addresses.length === 10 && estimatedFees !== null && (
         <div className="mt-4 text-center">
           <button className="btn btn-success p-2 bg-green-600 text-white rounded-md shadow-md hover:bg-green-700" onClick={executeBus}>
@@ -234,6 +237,7 @@ const EthBusApp: React.FC = () => {
       )}
     </div>
   );
+  
 };
 
 export default EthBusApp;
