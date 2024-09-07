@@ -368,7 +368,13 @@
 			}
 		],
 		"name": "getEstimatedFees",
-		"outputs": [],
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
 		"stateMutability": "view",
 		"type": "function"
 	},
@@ -408,7 +414,7 @@
 		],
 		"name": "prepareBus",
 		"outputs": [],
-		"stateMutability": "nonpayable",
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{

@@ -1,6 +1,6 @@
 
 import React from "react";
-import TokenList from "../Components/Token-List";
+import EthBusApp from "../Components/EthBus"
 
 
 function page() {
@@ -9,7 +9,7 @@ function page() {
   return (
     <div>
       
-      <TokenList />
+      <EthBusApp />
     </div>
   );
 }
