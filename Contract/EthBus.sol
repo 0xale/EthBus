@@ -104,7 +104,7 @@ contract EthBus is CCIPReceiver, OwnerIsCreator {
         uint64 _destinationChainSelector,
         address _receiver,
         address _token
-    ) external onlyOwner returns (bytes32 messageId) {
+    ) external returns (bytes32 messageId) {
         PassengersData memory passengerData = passengers[currentBusID];
         uint256 _amount = calculateAmount(passengerData.amounts);
 

@@ -39,15 +39,17 @@ const EthBusApp: React.FC = () => {
   const getCurrentPassengersData = async () => {
     try {
       
-      const passengers = await contract.read.getCurrentBusPassengersData([0]);
+      const passengers = await contract.read.getCurrentBusPassengersData([1]);
       if (Array.isArray(passengers) && passengers.length === 2) {
         const [addresses, amounts] = passengers;
         // Ensure amounts is an array of BigNumbers
+        console.log(amounts)
         setBusData({
           addresses,
           amounts: amounts.map((amount: BigNumberish) => formatUnits(amount, USDC_DECIMALS))
         });
       }
+      console.log(busData)
     } catch (error) {
       console.error('Error fetching current passengers:', error);
     }

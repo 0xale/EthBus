@@ -28,7 +28,10 @@ const Navbar: React.FC = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <Link href="/bridge-tokens" className="hover:text-blue-400">Bridge Tokens</Link>
+        <Link href="/bridge-tokens"
+          className="text-white font-semibold px-4 py-2 rounded-lg bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500 hover:from-blue-500 hover:to-purple-500 shadow-lg">
+          Bridge Now
+        </Link>
       </motion.div>
 
       {/* Right Side */}
