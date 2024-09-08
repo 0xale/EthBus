@@ -38,6 +38,7 @@ const EthBusApp: React.FC = () => {
 
   const getCurrentPassengersData = async () => {
     try {
+      
       const passengers = await contract.read.getCurrentBusPassengersData([0]);
       if (Array.isArray(passengers) && passengers.length === 2) {
         const [addresses, amounts] = passengers;
@@ -151,6 +152,11 @@ const EthBusApp: React.FC = () => {
   };
 
   const executeBus = async () => {
+
+    if(busData.addresses.length !== 10)
+    {
+      alert("Bus is not full yet");
+    }
     try {
       const destinationChainSelector = "16015286601757825753";
       const receiver = '0x15B89822220A2bb9b1F248fAB176E7952d1Be071'; // Receiver address
@@ -302,7 +308,7 @@ const EthBusApp: React.FC = () => {
       </div> */}
 
       {
-        busData.addresses.length === 10 && estimatedFees !== null && (
+       estimatedFees !== null && (
           <div className="mt-4 text-center">
             <button className="button-19 p-2 max-w-max text-white rounded-md shadow-md " onClick={executeBus}>
               Execute Bus
